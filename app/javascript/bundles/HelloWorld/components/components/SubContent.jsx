@@ -1,11 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
-import Typography from '@material-ui/core/Typography';
+import { Grid, Card, CardMedia, CardHeader,CardContent } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import TechCrunch from "./images/techCrunch.png";
+import Image from "material-ui-image";
+import Dollar from "./images/dollar.png";
+import Carousel from "./Carousel";
+import css from './SubContent.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "10vh",
+  },
+  media: {
+    height: 100,
+    width: 300,
   },
 }));
 
@@ -17,66 +26,28 @@ export default function SubContent() {
       <Grid
         container
         direction="row"
-        justify="space-around"
+        justify="center"
         alignItems="center"
+        spacing={2}
       >
-        <Grid item>Forbes</Grid>
-        <Grid item>Tech crunche</Grid>
-        <Grid item>New York times</Grid>
-      </Grid>
-      <br />
-      <Typography variant="h1" component="h2" gutterBottom>
-        A New Way of living
-      </Typography>
-      <Grid
-        container
-        direction="row"
-        justify="space-around"
-        alignItems="center"
-      >
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
-          </Grid>
+        <Grid item xs>
+          <h3>
+          <div className={css.techcrunch}>Tech Crunch</div>
+          </h3>
+          
         </Grid>
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
-          </Grid>
+
+        <Grid item xs>
+          <Image
+            src={TechCrunch}
+            cover
+            imageStyle={{ width: "100%", height: "auto" }}
+          />
         </Grid>
       </Grid>
-      <br />
-      <Typography variant="h1" component="h2" gutterBottom>
-        A New Way of living
-      </Typography>
-      To add carousel
-      <br />
+      <Carousel />
+      
+
       <Grid
         container
         direction="row"

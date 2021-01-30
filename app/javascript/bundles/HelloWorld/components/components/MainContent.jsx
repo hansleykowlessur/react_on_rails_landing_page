@@ -7,12 +7,22 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { Grid, Button, TextField } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Architecture from './images/architecture.jpg';
+import Japan from './images/japan.jpg';
+import Person from './images/person.jpg';
+import River from './images/river.jpg';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "10vh",
-
+    minHeight: "20vh",
   },
+  media: {
+    height: 100,
+  },
+  cards: {
+    minHeight: "50vh"
+  }
 }));
 
 export default function MainContent() {
@@ -25,6 +35,7 @@ export default function MainContent() {
         direction="column"
         justify="flex-start"
         alignItems="center"
+        spacing={6}
       >
         <Grid item>
           <Typography variant="h5" component="h2" gutterBottom>
@@ -44,13 +55,14 @@ export default function MainContent() {
           <Button variant="contained">Search</Button>
         </Grid>
       </Grid>
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container direction="row" justify="center" alignItems="center" spacing={2} className={classes.cards}>
         <Grid item xs={3}>
           <Card>
             <CardActionArea>
               <CardMedia
+                className={classes.media}
                 image={Architecture}
-                title="Contemplative Reptile"
+                title="Architecture"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -67,16 +79,16 @@ export default function MainContent() {
           <Card>
             <CardActionArea>
               <CardMedia
-                image=""
-                title="Contemplative Reptile"
+              className={classes.media}
+                image={Japan}
+                title="Japan"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
+                  Japan
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  Beauty of Japan
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -86,16 +98,16 @@ export default function MainContent() {
           <Card>
             <CardActionArea>
               <CardMedia
-                image=""
-                title="Contemplative Reptile"
+              className={classes.media}
+                image={Person}
+                title="Person"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
+                  Raining
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  Different seasons
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -105,16 +117,16 @@ export default function MainContent() {
           <Card>
             <CardActionArea>
               <CardMedia
-                image=""
-                title="Contemplative Reptile"
+              className={classes.media}
+                image={River}
+                title="River"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
+                  River
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over
-                  6,000 species, ranging across all continents except Antarctica
+                  Beautiful places
                 </Typography>
               </CardContent>
             </CardActionArea>
