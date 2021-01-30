@@ -1,12 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Card, CardMedia, CardHeader,CardContent } from "@material-ui/core";
+import { Paper,Grid, Card, CardMedia, CardHeader,CardContent } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import TechCrunch from "./images/techCrunch.png";
 import Image from "material-ui-image";
 import Dollar from "./images/dollar.png";
 import Carousel from "./Carousel";
-import css from './SubContent.scss';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
     height: 100,
     width: 300,
   },
+  techcrunch: {
+    backgroundImage: `url(${TechCrunch})`,
+    backgroundSize: 'cover',
+    height: 200,
+  }
 }));
 
 export default function SubContent() {
@@ -31,18 +36,11 @@ export default function SubContent() {
         spacing={2}
       >
         <Grid item xs>
-          <h3>
-          <div className={css.techcrunch}>Tech Crunch</div>
-          </h3>
-          
+          <div className={classes.techcrunch} />
         </Grid>
 
         <Grid item xs>
-          <Image
-            src={TechCrunch}
-            cover
-            imageStyle={{ width: "100%", height: "auto" }}
-          />
+        <div className={classes.techcrunch} />
         </Grid>
       </Grid>
       <Carousel />

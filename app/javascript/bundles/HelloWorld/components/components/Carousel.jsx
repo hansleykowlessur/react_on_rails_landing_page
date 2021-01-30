@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
       margin: "auto"
+  },
+  dollar: {
+    backgroundImage: `url(${Dollar})`,
+    backgroundSize: 'cover',
+    height: 200,
   }
 }));
 
@@ -31,10 +36,10 @@ export default function Carousel() {
   return (
       <Container>
         <Slider {...settings}>
-            <div className={classes.media}>
-                <Image src={Dollar} cover imageStyle={{ width: "inherit", height: "inherit" }} className={classes.img} />
+            <div>
+                <div className={classes.dollar} />
             </div>
-        </Slider>
+        cd </Slider>
       </Container>
     
   );
