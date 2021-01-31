@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { FaBeer } from 'react-icons/fa';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Container, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: '0vh',
@@ -13,9 +12,10 @@ export default function Header() {
 
     return (
         <div className={classes.root}>
+            <Container>
             <Grid container direction="row" justify="space-between" alignItems="center" >
                 <Grid item>
-                    <FaBeer />
+                <Typography variant="h6">Of Space</Typography>
                 </Grid>
                 <Grid item>
                     <Grid>
@@ -35,6 +35,8 @@ export default function Header() {
                     </Button>
                 </Grid>
             </Grid>
-        </div>
+        
+            </Container>
+         </div>
     );
 }

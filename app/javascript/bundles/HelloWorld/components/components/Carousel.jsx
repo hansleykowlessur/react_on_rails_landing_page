@@ -1,46 +1,119 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Button, Container } from "@material-ui/core";
+import {
+  Grid,
+  Container,
+  Card,
+  CardMedia,
+  CardContent,
+} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "material-ui-image";
-import Dollar from "./images/dollar.png";
+
+import Architecture from "./images/architecture.jpg";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "10vh",
   },
-  media:{
-      padding: "40px"
+  media: {
+    padding: "40px",
   },
   img: {
-      margin: "auto"
-  },
-  dollar: {
-    backgroundImage: `url(${Dollar})`,
-    backgroundSize: 'cover',
+    margin: "auto",
+    width: "auto",
     height: 200,
-  }
+  },
+  content: {
+    flex: "1 0 auto",
+  },
 }));
+
+function CustomArrows(props){
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "inline", background: "rgb(117,125,232)", borderRadius: "100px" }}
+      onClick={onClick}
+    />
+  );
+}
+
 
 export default function Carousel() {
   const classes = useStyles();
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    autoplay: true,
     slidesToScroll: 1
   };
   return (
-      <Container>
-        <Slider {...settings}>
+    <Container className={classes.root}>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Grid item xs={3}></Grid>
+        <Grid item xs={6}>
+          <Typography variant="h4" align="center">Response from our client</Typography>
+          <Slider {...settings}>
             <div>
-                <div className={classes.dollar} />
+              <Card>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Live From Space
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    Mac Miller
+                  </Typography>
+                </CardContent>
+                <CardMedia className={classes.img} image={Architecture} />
+              </Card>
             </div>
-        cd </Slider>
-      </Container>
-    
+            <div>
+              <Card>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Live From Space
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    Mac Miller
+                  </Typography>
+                </CardContent>
+                <CardMedia className={classes.img} image={Architecture} />
+              </Card>
+            </div>
+            <div>
+              <Card>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Live From Space
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    Mac Miller
+                  </Typography>
+                </CardContent>
+                <CardMedia className={classes.img} image={Architecture} />
+              </Card>
+            </div>
+            <div>
+              <Card>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Live From Space
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    Mac Miller
+                  </Typography>
+                </CardContent>
+                <CardMedia className={classes.img} image={Architecture} />
+              </Card>
+            </div>
+          </Slider>
+        </Grid>
+        <Grid item xs={3}></Grid>
+      </Grid>
+    </Container>
   );
 }

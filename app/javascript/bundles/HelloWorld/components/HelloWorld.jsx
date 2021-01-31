@@ -1,13 +1,10 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-
-import { Container } from "@material-ui/core";
-
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import SubContent from "./components/SubContent";
 import EndContent from "./components/EndContent";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import Footer from "./components/Footer";
 
 const HelloWorld = (props) => {
   const [name, setName] = useState(props.name);
@@ -15,7 +12,6 @@ const HelloWorld = (props) => {
   return (
     <div>
 
-      <Container>
         <Header />
 
         <MainContent />
@@ -23,7 +19,8 @@ const HelloWorld = (props) => {
         <SubContent />
 
         <EndContent />
-      </Container>
+
+        <Footer />
     </div>
   );
 };

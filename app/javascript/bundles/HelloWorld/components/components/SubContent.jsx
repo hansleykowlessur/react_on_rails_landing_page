@@ -1,26 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper,Grid, Card, CardMedia, CardHeader,CardContent } from "@material-ui/core";
+import { Grid, Container, Box } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import TechCrunch from "./images/techCrunch.png";
-import Image from "material-ui-image";
-import Dollar from "./images/dollar.png";
-import Carousel from "./Carousel";
 
+import Carousel from "./Carousel";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "10vh",
-  },
-  media: {
-    height: 100,
-    width: 300,
+    minHeight: "80vh",
   },
   techcrunch: {
     backgroundImage: `url(${TechCrunch})`,
-    backgroundSize: 'cover',
-    height: 200,
-  }
+    backgroundSize: "cover",
+    height: 220,
+  },
 }));
 
 export default function SubContent() {
@@ -28,67 +22,34 @@ export default function SubContent() {
 
   return (
     <div className={classes.root}>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        spacing={2}
-      >
-        <Grid item xs>
-          <div className={classes.techcrunch} />
-        </Grid>
+      <Container>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={2}
+        >
+          <Grid item xs>
+            <div className={classes.techcrunch} />
+            <Typography align="center">
+              <Box fontStyle="oblique" m={1}>
+                {'"Flexible housing setup"'}
+              </Box>
+            </Typography>
+          </Grid>
 
-        <Grid item xs>
-        <div className={classes.techcrunch} />
-        </Grid>
-      </Grid>
-      <Carousel />
-      
-
-      <Grid
-        container
-        direction="row"
-        justify="space-around"
-        alignItems="center"
-      >
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
+          <Grid item xs>
+            <div className={classes.techcrunch} />
+            <Typography align="center">
+              <Box fontStyle="oblique" m={1}>
+              {'"Flexible housing setup"'}
+              </Box>
+            </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
-            <Grid item>Image</Grid>
-            <Grid item>Title</Grid>
-            <Grid item>Quote</Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+        <Carousel />
+      </Container>
     </div>
   );
 }
