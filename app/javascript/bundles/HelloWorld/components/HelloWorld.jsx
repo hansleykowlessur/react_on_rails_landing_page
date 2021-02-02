@@ -7,7 +7,6 @@ import EndContent from "./components/EndContent";
 import Footer from "./components/Footer";
 
 const HelloWorld = (props) => {
-  const [name, setName] = useState(props.name);
 
   return (
     <div>
